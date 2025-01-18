@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Select Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ac5dc3d458.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="selector">
+        <div id="select">
+            <p id="display">Select Social Media</p>
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <div id="choix" class="hide">
+            <p class="option"><img src="instagram.png">Instagram</p>
+            <p class="option"><img src="youtube.png" >Youtube</p>
+            <p class="option"><img src="facebook.png" >Facebook</p>
+            <p class="option"><img src="twitter.png" >Twitter</p>
+            
+        </div>
+
+    </div>
+
+    <script>
+        const selectbtn = document.getElementById("select");
+        let display = document.getElementById("display");
+        let choice = document.getElementById("choix");
+        let i = document.querySelector("i");
+        
+
+
+        selectbtn.addEventListener("click",()=>{
+            choice.classList.toggle("hide");
+            if(choice.classList.contains("hide")){
+                i.style.transform = "rotate(0deg)";
+            }
+            else{
+                i.style.transform = "rotate(180deg)";
+            }
+        })
+
+        choice.addEventListener("click", (event) => {
+            if (event.target.tagName === 'P') {
+                display.innerHTML =  event.target.textContent;
+                choice.classList.toggle("hide");
+            }
+        });
+        
+    </script>
+</body>
+</html>

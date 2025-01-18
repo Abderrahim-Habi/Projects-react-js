@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#153677,#4e085f);
+    padding: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.card{
+    background-color: white;
+    min-height: 190px;
+    width: 400px;
+    margin-top: 90px;
+    border-radius: 5%;
+    
+}
+.content{
+    margin-top:30px;
+    margin-left: 20px;
+    position: relative;
+}
+h1{
+    font-size: 16px;
+}
+input{
+    margin-top: 20px;
+    width: 94%;
+    background-color:rgb(228, 228, 228);
+    outline: none;
+    border: 1px;
+    border-radius: 20px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 100px;
+}
+button{
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    position: absolute;
+    top: 37px;
+    right: 21px;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+}
+
+.checkbox-container{
+     display: flex; 
+    margin-left: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.text{
+   margin-top: 21px;
+   margin-left: 30px;
+}
+
+.checkbox:checked ~ p {
+    text-decoration:line-through;
+}
+
+span{
+    height: 20px;
+    width: 3px;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    background-color: red;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.two{
+    transform: rotate(45deg);
+}

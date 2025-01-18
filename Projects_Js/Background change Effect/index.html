@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachground Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="imgbox">
+            <img src="background_change_img/transparent.png" width="100%">
+            <div class="imgwrap">
+                <img src="background_change_img/original.jpg" id="original">
+            </div>
+            <span id="line">
+                <img src="background_change_img/arrow.png" class="arrow">
+            </span>
+        </div>
+    </div>
+
+    <script>
+        var Imgbox = document.querySelector(".imgbox");
+        var Imgwrap = document.querySelector(".imgwrap");
+        var original = document.getElementById("original");
+        var line = document.getElementById("line");
+        
+        original.style.width = Imgbox.offsetWidth + "px";
+
+        var leftspace = Imgbox.offsetLeft;
+
+        Imgbox.onmousemove = function(e){
+            var boxwidth = (e.pageX - leftspace) + "px"; //e.pageX donne la position de la souris sur l'axe horizontal (X) 
+            Imgwrap.style.width = boxwidth;
+            line.style.left = boxwidth;
+        }
+
+    </script>
+
+</body>
+</html>

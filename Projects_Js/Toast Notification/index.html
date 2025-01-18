@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notification</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="button">
+        <button onclick="showtoast('success submitted','success.png','valid')">Success</button>
+        <button onclick="showtoast('error','error.png','error')">Error</button>
+        <button onclick="showtoast('invalid','invalid.png','invalid')">Invalid</button>
+    </div>
+    <div id="toast">
+        
+    </div>
+
+
+    <script>
+        const toastbox = document.getElementById("toast"); 
+        function showtoast(content,image,type){
+        let toast = document.createElement("p");
+        let img = document.createElement("img");
+        img.src = image;
+        toast.classList.add(type);
+        toast.appendChild(img);
+        let text = document.createTextNode(content);
+        toast.appendChild(text);
+        toastbox.appendChild(toast);
+        
+        setTimeout(()=>{
+            toast.remove();
+
+        },2000)
+}
+
+    </script>
+</body>
+</html>

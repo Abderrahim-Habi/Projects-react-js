@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background: #f7edff;
+}
+.button{
+    margin: 50px;
+}
+button{
+    background: #333;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+#toast{
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+#toast p{
+    padding: 27px 0;
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    width: 300px;
+    min-width: 300px;
+    height: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-wrap: nowrap;
+    animation: pop 0.5s forwards;
+    right: -400px;
+}
+#toast img{
+    width: 30px;
+    margin-right: 20px;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+p::after{
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 5px;
+    /* background-color: green; */
+    bottom: 0px;
+    left: 0;
+    animation: effect 2s  forwards;
+    transform-origin: left;
+}
+.valid::after{
+    background-color: green;
+}
+.error::after {
+    background-color: red;
+}
+.invalid::after{
+    background-color: orange;
+}
+
+@keyframes effect {
+    from{
+        width: 300px;
+    }
+    to{
+        width: 0px;
+    }
+}
+
+@keyframes pop {
+    from{
+        right: -400px;
+        
+    }
+    to{
+        right: 0px;
+    }
+}
